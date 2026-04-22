@@ -88,6 +88,8 @@ The following models were trained:
 
 ---
 
+## 📁 Project Structure
+
 traffic-accident-analysis/
 │
 ├── notebook.ipynb
