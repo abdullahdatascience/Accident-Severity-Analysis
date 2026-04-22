@@ -1,117 +1,56 @@
-# 🚗 Traffic Accident Analysis & Severity Prediction
+Traffic Accident Severity Analysis using Machine Learning
+Overview
 
-## 📌 Project Overview
-This project analyzes large-scale traffic accident data from multiple sources to understand patterns in time, location, demographics, environmental conditions, and risk factors. It also builds machine learning models to predict accident severity.
+This project analyzes and predicts traffic accident severity using machine learning techniques on a large-scale dataset containing over 1.2 million records. The objective is to identify key factors influencing accident severity and build predictive models to classify accidents into three categories: Slight, Serious, and Fatal.
 
-The goal is to support data-driven road safety decisions and identify high-risk conditions.
+Problem Statement
 
----
+Traffic accidents are influenced by multiple factors such as time, location, weather, road conditions, and demographic attributes. Understanding these factors is important for improving road safety and decision-making.
 
-## 🎯 Objectives
-- Identify when and where accidents occur most frequently
-- Analyze demographic and environmental risk factors
-- Understand severity patterns in accidents
-- Build ML models to predict accident severity
+The objectives of this project are:
 
----
+To analyze accident patterns using exploratory data analysis
+To identify significant factors affecting accident severity
+To develop machine learning models for severity prediction
+Dataset Description
 
-## 📊 Dataset Description
-Multiple datasets were merged:
-- Severity Analysis
-- Spatial Analysis
-- Demographic Analysis
-- Temporal Analysis
-- Risk Factors Analysis
+The dataset contains more than 1,200,000 accident records with the following types of features:
 
-Final dataset size:
-- **1.19M+ rows**
-- **24 features (after cleaning)**
+Temporal features (hour, day, month, year)
+Spatial features (location, urban/rural classification, road type)
+Demographic features (driver age, casualty type)
+Environmental features (weather conditions, lighting, road surface)
+Methodology
 
----
+The project follows a structured machine learning pipeline:
 
-## 🧹 Data Preprocessing
-- Removed duplicate records
-- Handled missing values
-- Standardized categorical values
-- Imputed missing coordinates using KNN Imputer
-- Removed highly missing columns (>99% missing)
-- Encoded target variable (accident severity)
+Data Collection → Data Cleaning → Feature Engineering → Exploratory Data Analysis → Model Training → Model Evaluation
 
----
+Machine Learning Models
 
-## 📈 Exploratory Data Analysis (EDA)
-Key insights:
-- Most accidents occur during afternoon rush hours (3–6 PM)
-- Night-time accidents have higher fatality rates
-- Weekdays have significantly more accidents than weekends
-- Rural areas show higher fatal accident rates
-- Weather and road conditions strongly impact severity
+The following models were implemented and evaluated:
 
----
+LightGBM Classifier
+CatBoost Classifier
+Ensemble Model (LightGBM + CatBoost)
+Model Performance
+Model	ROC AUC	Macro F1 Score
+LightGBM	0.78	0.52
+CatBoost	0.79	0.52
+Ensemble	0.79	0.53
+Key Findings
+Night-time accidents show higher severity levels compared to daytime
+Rural areas have a higher proportion of fatal accidents
+Weather and lighting conditions significantly affect accident outcomes
+Speed limits and road types are strong indicators of severity
+Weekdays show a higher number of total accidents compared to weekends
+Visualizations
 
-## 🤖 Machine Learning Models
-The following models were trained:
+The analysis includes the following visual outputs:
 
-- LightGBM Classifier
-- CatBoost Classifier
-- Ensemble Model (LightGBM + CatBoost)
+Confusion matrix
+Feature importance analysis
+Temporal distribution of accidents
+Severity distribution across different factors
 
-### Evaluation Metrics:
-- Accuracy
-- Macro F1 Score
-- ROC AUC Score
-
----
-
-## 🏆 Results
-- Best Macro F1 Score: **0.53**
-- Best ROC AUC Score: **0.79**
-- Ensemble model performed best overall
-
----
-
-## 📌 Key Takeaways
-- Severity is highly influenced by time, road type, and weather conditions
-- Night and rural conditions significantly increase fatality risk
-- Ensemble models improve stability across imbalanced classes
-
----
-
-## 🛠️ Technologies Used
-- Python
-- Pandas, NumPy
-- Matplotlib, Seaborn
-- Scikit-learn
-- LightGBM
-- CatBoost
-- Optuna
-
----
-
-## 📁 Project Structure
-
-traffic-accident-analysis/
-│
-├── notebook.ipynb
-├── README.md
-├── requirements.txt
-│
-├── data/
-│ └── raw/
-│
-└── outputs/
-
-
----
-
-## 🚀 Future Improvements
-- Deep learning models (Neural Networks / CNN)
-- Real-time prediction system
-- Deployment using Flask/FastAPI
-- Geographic visualization (maps)
-
----
-
-## 👨‍💻 Author
-Muhammad Abdullah  
-Data Analyst | ML Enthusiast
+(Visuals can be found in the images folder)
